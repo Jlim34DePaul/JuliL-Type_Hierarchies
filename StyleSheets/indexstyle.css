@@ -1,0 +1,86 @@
+@charset "UTF-8";
+/* Typeface CSS Document */
+
+html{
+font-size: 16px;
+}
+
+.navbar {
+font-size: 1rem;
+min-height: 60px; /* Adjust this to the height of your navbar */
+}
+
+.center-screen {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 75vh;
+}
+
+
+@font-face {
+src: url("https://res.cloudinary.com/dr6lvwubh/raw/upload/v1529908256/CompressaPRO-GX.woff2");
+font-family: "Compressa VF";
+font-style: normal;
+}
+
+#main {
+display: flex;
+flex-direction: column;
+height: 100vh;
+justify-content: center;
+align-items: center;
+}
+
+h1 {
+font-family: 'Compressa VF';
+font-size: 25vh;
+text-align: center;
+text-transform: uppercase;
+font-variation-settings: 'wght' 200, 'wdth' 85;
+color: #000000;
+}
+
+
+h1 .char {
+    --delay: calc((var(--char-index) + 1) * 150ms);
+    animation: wave 1000ms;
+    animation-delay: var(--delay);
+animation-direction: alternate-reverse;
+display: block;
+float: left;
+}
+
+@keyframes wave {
+    60% {
+        font-variation-settings: 'wght' 700, 'wdth' 100;
+    }
+
+    100% {
+        font-variation-settings: 'wght' 200, 'wdth' 85;
+    }
+}
+
+
+.wave-heading {
+    font-size: clamp(1.5rem, 5vw, 4rem); /* Responsive font size */
+    white-space: nowrap; /* Keep text on one line */
+    overflow: hidden;
+  }
+
+
+
+/* Dark mode styles (applied when .dark-mode is added) */
+.dark-mode {
+    background-color: #121212;
+    color: #fff;
+  }
+  
+  .dark-mode h1, .dark-mode h4 {
+    color: #eee;
+  }
+  
+  .dark-mode .char {
+    color: #ddd; /* Optional: Wave text color */
+  }
